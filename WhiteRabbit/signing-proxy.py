@@ -2,8 +2,8 @@
 import argparse, requests, hmac, hashlib, threading, socketserver, http.server, urllib.parse
 
 class ProxyHandler(http.server.BaseHTTPRequestHandler):
-    secret = b"3CWVGMndgMvdVAzOjqBiTicmv7gxc6IS"  # <-- Replace with your actual secret
-    target = "http://28efa8f7df.whiterabbit.htb"   # <-- Replace with your actual target root URL
+    secret = b"HMAC Secret"
+    target = "your actual target root URL"
 
     def _proxy(self):
         length = int(self.headers.get('Content-Length', 0))
